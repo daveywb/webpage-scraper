@@ -3,7 +3,8 @@ import re
 import csv
 import ast
 
-urls = [ # URLS go here # ]
+# URLS go here #
+urls = [  ]
 
 array = []
 
@@ -11,7 +12,7 @@ for url in urls:
     request = urllib.request.urlopen(url)
     page = request.read().decode()
 
-    # fixes an incorrectly styled field
+    # fixes a field missing quotes
     pageFixed = page.replace("accordionTitle", "'accordionTitle'")
 
     # finds all substrings that start "dataLayer.push({" and end "})"
